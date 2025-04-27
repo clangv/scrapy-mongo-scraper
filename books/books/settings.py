@@ -62,9 +62,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "books.pipelines.BooksPipeline": 300,
-#}
+
+ITEM_PIPELINES = {
+    "books.pipelines.MongoPipeline": 300, #Using 300 is a convention that indicates to developers that this number is flexible and that they can use a wide range above and below it to order the priorities of your pipelines.
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -90,3 +91,7 @@ ROBOTSTXT_OBEY = True
 # Set settings whose default value is deprecated to a future-proof value
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+#MongoDB connection
+MONGO_URI = "mongodb://localhost:27017"
+MONGO_DATABASE = "books_db"
