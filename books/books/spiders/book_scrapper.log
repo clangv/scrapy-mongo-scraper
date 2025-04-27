@@ -1,0 +1,60 @@
+2025-04-27 22:51:57 [scrapy.core.scraper] ERROR: Spider error processing <GET https://books.toscrape.com/catalogue/page-50.html> (referer: https://books.toscrape.com/catalogue/page-49.html)
+Traceback (most recent call last):
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\utils\defer.py", line 327, in iter_errback
+    yield next(it)
+          ~~~~^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\utils\python.py", line 368, in __next__
+    return next(self.data)
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\utils\python.py", line 368, in __next__
+    return next(self.data)
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\spidermiddlewares\referer.py", line 379, in <genexpr>
+    return (self._set_referer(r, response) for r in result)
+                                                    ^^^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 57, in <genexpr>
+    return (r for r in result if self._filter(r, spider))
+                       ^^^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\spidermiddlewares\depth.py", line 54, in <genexpr>
+    return (r for r in result if self._filter(r, response, spider))
+                       ^^^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\books\books\spiders\book.py", line 24, in parse
+    yield scrapy.Request(url=next_page_url, callback=self.parse)
+                             ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'next_page_url' where it is not associated with a value
+2025-04-27 22:52:42 [scrapy.core.scraper] ERROR: Spider error processing <GET https://books.toscrape.com/catalogue/page-50.html> (referer: https://books.toscrape.com/catalogue/page-49.html)
+Traceback (most recent call last):
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\utils\defer.py", line 327, in iter_errback
+    yield next(it)
+          ~~~~^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\utils\python.py", line 368, in __next__
+    return next(self.data)
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\utils\python.py", line 368, in __next__
+    return next(self.data)
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\spidermiddlewares\referer.py", line 379, in <genexpr>
+    return (self._set_referer(r, response) for r in result)
+                                                    ^^^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 57, in <genexpr>
+    return (r for r in result if self._filter(r, spider))
+                       ^^^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\spidermiddlewares\depth.py", line 54, in <genexpr>
+    return (r for r in result if self._filter(r, response, spider))
+                       ^^^^^^
+  File "F:\scrapy\venv\Lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    yield from iterable
+  File "F:\scrapy\books\books\spiders\book.py", line 24, in parse
+    yield scrapy.Request(url=next_page_url, callback=self.parse)
+                             ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'next_page_url' where it is not associated with a value
