@@ -7,6 +7,12 @@ class BookSpider(scrapy.Spider):
     allowed_domains = ["books.toscrape.com"]
     start_urls = ["https://books.toscrape.com/catalogue/page-1.html"]
 
+    def start_requests(self):
+        for url in self.start_urls:
+            yield scrapy.Request(
+                url, callback=self.parse, errback=self.log_error
+            )
+
     def log_error(self, failure):
         self.longer.error(repr(failure))
 
