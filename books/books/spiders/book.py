@@ -17,6 +17,13 @@ class BookSpider(scrapy.Spider):
         self.longer.error(repr(failure))
 
     def parse(self, response):
+        """
+        @url https://book.toscrape.com
+        @returns items 20 20
+        @returns request 1 50
+        @scrapes url title price
+        """
+
         for book in response.css("article.product_pod"):
             item = BooksItem()
             item["url"] = response.urljoin(book.css("h3 a::attr(href)").get())
