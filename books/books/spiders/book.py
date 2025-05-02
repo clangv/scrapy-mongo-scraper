@@ -17,11 +17,17 @@ class BookSpider(scrapy.Spider):
         self.longer.error(repr(failure))
 
     def parse(self, response):
+        # """
+        # @url https://book.toscrape.com
+        # @returns items 20 20
+        # @returns request 1 50
+        # @scrapes url title price
+        # """
         """
-        @url https://book.toscrape.com
+        @url https://books.toscrape.com/
         @returns items 20 20
         @returns request 1 50
-        @scrapes url title price
+        @scrapes title price url
         """
 
         for book in response.css("article.product_pod"):
